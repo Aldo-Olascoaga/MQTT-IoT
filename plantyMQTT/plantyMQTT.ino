@@ -16,14 +16,14 @@ const char *root_topic_publish = "/output";
 
 
 
-//========== WIFICONFIG ==========
+//========== WIFI CONFIG ==========
 char* ssid = "ARRIS-B779";
 char* password =  "Olmedo_2020";
 
 
 
 
-//========== GLOBALES ==========
+//========== GLOBALS ==========
 WiFiClient espClient;
 PubSubClient client(espClient);
 char msg[100]; //length of message
