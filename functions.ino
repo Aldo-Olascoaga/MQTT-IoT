@@ -1,16 +1,15 @@
-//========= CONEXIÓN MQTT =========    
-
+//========= MQTT CONNECTION =========    
+// In case connection fails...
 void reconnect() {
-
   while (!client.connected()) {
     Serial.print("Intentando conexión Mqtt...");
-    // Creamos un cliente ID
+    // We create a client
     String clientId = "WIX_Team";
     clientId += String(random(0xffff), HEX);
-    // Intentamos conectar
+    // Let's try to connect...
     if (client.connect(clientId.c_str(),mqtt_user,mqtt_pass)) {
       Serial.println("Conectado!");
-      // Nos suscribimos
+      // Let's suscribe
       if(client.subscribe(root_topic_subscribe)){
         Serial.println("Suscripcion ok");
       }else{
@@ -27,7 +26,7 @@ void reconnect() {
 
 
 //========= CALLBACK =========
-
+// Callback function for the message
 void callback(char* topic, byte* payload, unsigned int length){
   String incoming = "";
   Serial.print("Mensaje recibido desde -> ");
@@ -43,6 +42,8 @@ void callback(char* topic, byte* payload, unsigned int length){
 
 
 //========= SENSORS SETUP =========
+
+// The purpose of this function is to start the DHT11 sensor so it works smoothly
 void sensors_setup(){
   dht.begin();
 }
