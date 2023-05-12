@@ -9,6 +9,8 @@ We are using MQTT for an IoT project. The main objective is to read in real time
 ### SOFTWARE
 It uses the software Arduino for the functionality of the NodeMCU and the sending of the information using MQTT.
 
+Besides, Mosquitto was implemented for this project. Mosquitto is an open source message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.11. It is lightweight and is suitable for use on all devices from low power single board computers to full servers
+
 <br>
 
 ### TECHNOLOGICAL TOOLS
