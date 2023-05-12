@@ -29,3 +29,7 @@ For this project we used Arduino, for the connection we created an Instance usin
 
 ### MQTT
 Back-end system that coordinates messages between different clients.
+
+### VIDEO DEMO
+Here is the link provided so anyone can see how this project works: 
+https://drive.google.com/drive/folders/1KKnlijH8loMl3KrUoQ9f7gYZA4ocbCQX?usp=sharing
