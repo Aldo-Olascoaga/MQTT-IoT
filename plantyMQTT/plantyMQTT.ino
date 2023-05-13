@@ -1,3 +1,8 @@
+// MQTT-IoT
+// Herramientas computacionales: el arte de la programación (TC1001S.200)
+// Camila Turner A01423579, Aldo Olascoaga A01424731, Patricio Álvarez A01423897
+// 12/05/23
+
 #include "DHT.h"
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
@@ -7,12 +12,12 @@
 
 
 //========== MQTT CONFIG ==========
-const char *mqtt_server = "44.211.192.147"; //IP of instance in AWS
-const int mqtt_port = 1883;
-const char *mqtt_user = "";
-const char *mqtt_pass = "";
-const char *root_topic_subscribe = "/input";
-const char *root_topic_publish = "/output";
+const char *mqtt_server = "IP ADRESS"; //IP of instance in AWS
+const int mqtt_port = 1883; // Port open for MQTT
+const char *mqtt_user = ""; // In case of Log In
+const char *mqtt_pass = ""; // In case of Log In
+const char *root_topic_subscribe = "/input"; // Topic to pub -> Send Info
+const char *root_topic_publish = "/output"; // Topic to sub  -> Receive Info
 
 
 
@@ -46,6 +51,7 @@ void reconnect();
 void setup_wifi();
 void sensors_setup();
 
+// When start
 void setup() {
   Serial.begin(115200);
   sensors_setup();
@@ -54,6 +60,7 @@ void setup() {
   client.setCallback(callback);
 }
 
+// Every time
 void loop() {
   
   if (!client.connected()) { //in case it loses connection
@@ -79,7 +86,7 @@ void loop() {
 
 
 
-//========= Conexion WIFI =========
+//========= WIFI Connection =========
 void setup_wifi(){
   delay(10);
   // Nos conectamos a nuestra red Wifi
