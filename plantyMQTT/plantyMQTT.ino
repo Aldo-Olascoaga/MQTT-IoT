@@ -17,8 +17,8 @@ const char *root_topic_publish = "/output";
 
 
 //========== WIFI CONFIG ==========
-char* ssid = "ARRIS-B779";
-char* password =  "Olmedo_2020";
+char* ssid = "INTERNET NET NAME";
+char* password =  "INTERNET NET PASSWORD";
 
 
 
